@@ -14,6 +14,7 @@ let router = new VueRouter({
         path: '/',
         name: "one",
         component: one,
+        redirect: '/home',
         children: [{
                 // 叮当快药
                 path: '/home',
