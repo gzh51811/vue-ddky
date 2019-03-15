@@ -64,6 +64,18 @@ export default {
         active4: require("../assets/img/1231254s13.png")
       }
     };
+  },
+  mounted: function() {
+    console.log("读取导航");
+    if (this.$route.name === "home") {
+      this.active = 0;
+    } else if (this.$route.name === "mall") {
+      this.active = 1;
+    } else if (this.$route.name === "spncart") {
+      this.active = 2;
+    } else if (this.$route.name === "mine") {
+      this.active = 3;
+    }
   }
 };
 </script>
@@ -72,6 +84,6 @@ export default {
 .icon_img {
   width: 45px;
   height: 45px !important;
-  padding-top: 4px
+  padding-top: 4px;
 }
 </style>
