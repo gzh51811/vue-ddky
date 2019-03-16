@@ -1,7 +1,7 @@
 // mall 页面store
 export default {
     state: {
-        mallsj: {}
+        // mall页面数据 名称为 mallsj
     },
     mutations: {
         mallsjcc(state, n) {
