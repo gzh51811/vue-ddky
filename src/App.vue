@@ -5,9 +5,12 @@
 </template>
 
 <script>
+import home from './components/one/home.vue'
 export default {
   name: "app",
-  components: {}
+  components: {
+    home,
+  }
 };
 </script>
 
