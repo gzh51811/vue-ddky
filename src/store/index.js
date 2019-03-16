@@ -1,12 +1,12 @@
-import Vue from 'vue';
-import Vuex from 'vuex';
-Vue.use(Vuex);
-const store = new Vuex.Store({
-  state: {
-    count: 0
-  },
-  mutations: {
-    
-  } 
+import Vue from 'vue'
+import vuex from 'vuex'
+Vue.use(vuex);
+
+// mall 页面store
+import mall_store from './mall_store'
+
+export default new vuex.Store({
+    modules: {
+        mall: mall_store
+    }
 })
-export default store
