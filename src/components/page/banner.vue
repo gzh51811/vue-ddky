@@ -2,9 +2,9 @@
   <div class="banner">
     <div class="swiper-container" id="swiper1">
       <div class="swiper-wrapper">
-        <div class="swiper-slide" v-for="(item,index) in imgurl" :key="index">
+        <!-- <div class="swiper-slide" v-for="(item,index) in imgurl" :key="index">
           <img :src="item">
-        </div>
+        </div> -->
       </div>
       <!-- Add Pagination -->
       <div class="swiper-pagination"></div>
@@ -18,18 +18,21 @@ export default {
   components: {},
   data(){
     return {
-        imgurl: [
-          "https://img.ddky.com/c/cms/temp/20190314/1552526545283_720_300.jpg",
-          "https://img.ddky.com/c/cms/temp/20190308/1552035441028_720_300.jpg",
-          'https://img.ddky.com/c/cms/temp/20190308/1552035492473_720_300.jpg',
-          'https://img.ddky.com/c/cms/temp/20190308/1552038202616_720_300.jpg',
-          'https://img.ddky.com/c/cms/temp/20190308/1552038243711_720_300.jpg',
-          'https://img.ddky.com/c/cms/temp/20190314/1552525493073_720_300.jpg'
-        ]
+        // imgurl: [
+        //   "https://img.ddky.com/c/cms/temp/20190314/1552526545283_720_300.jpg",
+        //   "https://img.ddky.com/c/cms/temp/20190308/1552035441028_720_300.jpg",
+        //   'https://img.ddky.com/c/cms/temp/20190308/1552035492473_720_300.jpg',
+        //   'https://img.ddky.com/c/cms/temp/20190308/1552038202616_720_300.jpg',
+        //   'https://img.ddky.com/c/cms/temp/20190308/1552038243711_720_300.jpg',
+        //   'https://img.ddky.com/c/cms/temp/20190314/1552525493073_720_300.jpg'
+        // ]
     }
   },
   methods: {
   
+  },
+   created:function(){
+    console.log(this)
   },
   mounted() {
     var swiper1 = new Swiper("#swiper1", {
