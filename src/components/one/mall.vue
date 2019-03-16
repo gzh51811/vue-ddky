@@ -2,6 +2,9 @@
   <div id="mall">
     <Header/>
     <Banner/>
+    <Features/>
+    <BrandSale/>
+    <Category/>
   </div>
 </template>
 
@@ -12,14 +15,22 @@ import Header from "../malls/heade";
 import Banner from "../malls/banner";
 // jsonp 请求
 import jsonp from "../../assets/js/jsonpfz.js";
-
+// 功能导航
+import Features from "../malls/Features";
+// 品牌销售
+import BrandSale from "../malls/BrandSale";
+// 分类列表
+import Category from "../malls/Category";
 export default {
   data() {
     return {};
   },
   components: {
     Banner,
-    Header
+    Header,
+    Features,
+    BrandSale,
+    Category
   },
   methods: {},
   beforeCreate: function() {
