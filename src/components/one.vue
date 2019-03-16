@@ -51,17 +51,17 @@ export default {
       active: 0,
       icon: {
         // 叮当快药
-        normal1: require("../assets/img/1542445956477_104_104.jpg"),
-        active1: require("../assets/img/1542445952383_104_104.jpg"),
+        normal1: require("../../public/img/1542445956477_104_104.jpg"),
+        active1: require("../../public/img/1542445952383_104_104.jpg"),
         // 叮当商城
-        normal2: require("../assets/img/121212.png"),
-        active2: require("../assets/img/1542445962489_104_104.png"),
+        normal2: require("../../public/img/121212.png"),
+        active2: require("../../public/img/1542445962489_104_104.png"),
         // 清单列表
-        normal3: require("../assets/img/32323.png"),
-        active3: require("../assets/img/32s23.png"),
+        normal3: require("../../public/img/32323.png"),
+        active3: require("../../public/img/32s23.png"),
         // 我的
-        normal4: require("../assets/img/123125413.png"),
-        active4: require("../assets/img/1231254s13.png")
+        normal4: require("../../public/img/123125413.png"),
+        active4: require("../../public/img/1231254s13.png")
       }
     };
   },
