@@ -3,6 +3,9 @@ import App from './App.vue'
 // 引入路由文件
 import router from './router/router'
 
+
+Vue.config.productionTip = false
+
 import Vant from 'vant';
 import 'vant/lib/index.css';
 
@@ -20,7 +23,6 @@ Vue.prototype.$axios = axios;
 Vue.use(Lazyload);
 Vue.use(Vant);
 
-Vue.config.productionTip = false
 new Vue({
   render: h => h(App),
   router: router,
