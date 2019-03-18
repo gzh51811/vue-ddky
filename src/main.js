@@ -16,10 +16,12 @@ import axios from "axios";
 Vue.prototype.$axios = axios;
 
 //引入jsonp(跨域)
-//
+// import jsonp from './assets/js/jsonpfz.js';
+
 new Vue({
   render: h => h(App),
   router: router,
+  // jsonp:jsonp,
 }).$mount('#app')
 
 // 订单快要主题色-#F93935
