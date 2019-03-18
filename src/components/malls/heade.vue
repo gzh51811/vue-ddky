@@ -1,11 +1,11 @@
 <template>
   <div id="header">
-    <div class="header_left">
+    <div class="header_left" v-on:click="siteJump">
       <van-icon name="location" color="#ffffff" size="18px" class="header_left_icon"/>
       <div class="van-ellipsis header_left_text" v-text="heder_left_text"></div>
       <van-icon name="arrow-down" color="#ffffff" size="12px" class="header_left_icon"/>
     </div>
-    <div class="header_reght">
+    <div class="header_reght" v-on:click="searchJump">
       <div class="header_reght_dhl">
         <van-icon name="search" color="#ffffff" size="19px" class="header_reght_icon"/>
         <div class="van-ellipsis header_reght_text">搜索药品、症状、品牌</div>
@@ -20,6 +20,16 @@ export default {
     return {
       heder_left_text: "叮当智慧药房（广州店）"
     };
+  },
+  methods: {
+    siteJump() {
+      console.log("跳转定位页面");
+      this.$router.history.push("/site");
+    },
+    searchJump() {
+      console.log("跳转搜索页面");
+      this.$router.history.push("/search");
+    }
   }
 };
 </script>
