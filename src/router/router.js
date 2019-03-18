@@ -8,6 +8,8 @@ import home from "../components/one/home.vue"
 import mall from "../components/one/mall.vue"
 import spncart from "../components/one/spncart.vue"
 import mine from "../components/one/mine.vue"
+import reg from "../components/one/reg.vue"
+import login from "../components/one/login.vue"
 
 let router = new VueRouter({
     routes: [{
@@ -38,6 +40,18 @@ let router = new VueRouter({
                 name: 'mine',
                 component: mine
             },
+            {
+                // 我的
+                path: '/reg',
+                name: 'reg',
+                component: reg
+            },
+            {
+                // 我的
+                path: '/login',
+                name: 'login',
+                component: login
+            }
         ]
     }]
 });
