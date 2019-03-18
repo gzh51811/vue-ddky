@@ -51,10 +51,9 @@ export default {
   beforeCreate: function() {
     // console.log("开始请求mall页面数据");
 
-    var src =
-      "https://api.ddky.com/cms/rest.htm?sign=3711540634F04845D820093A164D59AD&city=%E5%B9%BF%E5%B7%9E%E5%B8%82&loginToken=46997443576320445e34a6cf726ffe3a&method=com.ddky.mall.ueug.query&plat=H5&platform=H5&t=2019-3-16%2014:48:53&uDate=58927020190314&userId=1016718971&v=1.0&versionName=4.9.0&callback=Zepto1552718933843";
+    var src =this.$store.state.RequestLink_store.mall_category
 
-    jsonp(src, "Zepto1552718933843")
+    jsonp(src)
       .then(result => {
         // console.log("mall页面数据开始存储")
         this.$store.commit("categorysj", result);

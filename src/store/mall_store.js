@@ -11,7 +11,9 @@ export default {
         },
         // mall页面数据 名称为 mallsj
         cate: {
-
+            data:{
+                ueugList:[] 
+            }
         }
     },
     mutations: {
