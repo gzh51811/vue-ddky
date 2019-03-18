@@ -1,8 +1,8 @@
-const jsonp = function (url, sss) {
+const jsonp = function (url) {
     return new Promise((resolve, reject) => {
         // 初始化url
         // let dataString = url.indexOf('?') === -1 ? '?' : '&'
-        let callbackName = sss
+        let callbackName = url.substr(url.lastIndexOf("=") + 1)
         // url += `${dataString}callback=${callbackName}`
         // if (data) {
         //     // 有请求参数，依次添加到url
