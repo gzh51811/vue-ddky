@@ -39,10 +39,10 @@ export default {
   computed: {
     msg() {
       return [
-        this.$store.state.home.home_sj.data.deliveryTime,
-        this.$store.state.home.home_sj.data.freight,
-        this.$store.state.home.home_sj.data.serviceReamark,
-        this.$store.state.home.home_sj.data.appointment
+        this.$store.state.homemsg.home_sj.data.deliveryTime,
+        this.$store.state.homemsg.home_sj.data.freight,
+        this.$store.state.homemsg.home_sj.data.serviceReamark,
+        this.$store.state.homemsg.home_sj.data.appointment
       ];
     }
   }

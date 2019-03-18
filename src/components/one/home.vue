@@ -30,9 +30,8 @@ export default {
   methods: {},
   beforeCreate: function() {
     // console.log("开始请求home页面数据");
-    var src =
-      "http://api.ddky.com/cms/rest.htm?sign=DA600E0013B93CFE168561600F13584E&city=%E5%B9%BF%E5%B7%9E%E5%B8%82&loginToken=0d1b16118a78e4326c9984ed0a1988a6&method=ddky.cms.h5.o2o.homepage.get&plat=H5&platform=H5&shopId=202132&t=2019-3-18%209:24:44&uDate=74645220170407&userId=1007394111&v=1.0&versionName=4.6.0&callback=Zepto1552872284233";
-    jsonp(src,'Zepto1552872284233')
+    var src =this.$store.state.RequestLink_store.home_banner;
+    jsonp(src)
       .then(result => {
         // console.log(result);
         this.$store.commit("homemsg", result);

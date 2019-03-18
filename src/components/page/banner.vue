@@ -24,7 +24,7 @@ export default {
   },
   computed: {
     img() {
-      return this.$store.state.home.home_sj.data.topUrlNew.topUrls;
+      return this.$store.state.homemsg.home_sj.data.topUrlNew.topUrls
     }
   },
 };
