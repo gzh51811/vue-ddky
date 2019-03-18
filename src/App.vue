@@ -4,15 +4,12 @@
   </div>
 </template>
 <script>
-// import Vue from 'vue';
-// //引入ajax的axios
-// import axios from "axios"; 
-
-// // 把axios设置到Vue的原型对象上，方便在任意组件中使用
-// Vue.prototype.$axios = axios;
+import home from './components/one/home.vue'
 export default {
   name: "app",
-  components: {}
+  components: {
+    home,
+  }
 };
 </script>
 
