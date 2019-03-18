@@ -8,6 +8,8 @@ import home from "../components/one/home.vue"
 import mall from "../components/one/mall.vue"
 import spncart from "../components/one/spncart.vue"
 import mine from "../components/one/mine.vue"
+import site from "../components/one/site.vue"
+import search from "../components/one/search.vue"
 
 let router = new VueRouter({
     routes: [{
@@ -40,6 +42,14 @@ let router = new VueRouter({
                 component: mine
             },
         ]
+    }, {
+        path: '/site',
+        name: "site",
+        component: site
+    }, {
+        path: '/search',
+        name: "search",
+        component: search
     }]
 });
 
