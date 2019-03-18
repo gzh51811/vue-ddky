@@ -11,6 +11,8 @@ import mine from "../components/one/mine.vue"
 import login from "../components/one/login.vue"
 import reg from "../components/one/reg.vue"
 // import goods from "../components/one/goods.vue"
+import site from "../components/one/site.vue"
+import search from "../components/one/search.vue"
 
 let router = new VueRouter({
     routes: [{
@@ -61,6 +63,14 @@ let router = new VueRouter({
             //     component: goods
             // },
         ]
+    }, {
+        path: '/site',
+        name: "site",
+        component: site
+    }, {
+        path: '/search',
+        name: "search",
+        component: search
     }]
 });
 
