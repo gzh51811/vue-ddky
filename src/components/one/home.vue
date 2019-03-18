@@ -1,19 +1,50 @@
 <template>
-  <div>
-    <h1>叮当快药</h1>
+  <div id="home">
+    <Xheader></Xheader>
+    <banner></banner>
+    <mess></mess>
+    <list></list>
   </div>
 </template>
-
 <script>
+import banner from "../page/banner.vue";
+import Xheader from "../malls/heade.vue";
+import mess from "../page/luanqibazao.vue";
+import list from "../page/list.vue";
+// jsonp 请求
+import jsonp from "../../assets/js/jsonpfz.js";
 export default {
   data() {
-    return {};
+    return {
+        images: [
+          // this.$store.
+      ]
+    };
+  },
+  components: {
+    Xheader,
+    banner,
+    mess,
+    list
+  },
+  methods: {},
+  beforeCreate: function() {
+    // console.log("开始请求home页面数据");
+    var src =this.$store.state.RequestLink_store.home_banner;
+    jsonp(src)
+      .then(result => {
+        // console.log(result);
+        this.$store.commit("homemsg", result);
+      })
+      .catch(err => {
+        console.error(err);
+      });
   }
 };
 </script>
 
 <style scoped>
-h1 {
-  text-align: center;
+#home {
+  padding-top: 45px;
 }
 </style>

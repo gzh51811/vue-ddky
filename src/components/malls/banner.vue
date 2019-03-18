@@ -18,7 +18,7 @@ export default {
   },
   computed: {
     images() {
-    //   console.log(this.$store.state.mall.mallsj.data.mallBannerModule.topUrls);
+      // console.log(this.$store.state.mall.mallsj.data.mallBannerModule.topUrls);
       return this.$store.state.mall.mallsj.data.mallBannerModule.topUrls;
     }
   }
