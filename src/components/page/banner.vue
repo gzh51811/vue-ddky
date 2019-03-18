@@ -2,13 +2,12 @@
   <div>
     <van-swipe :autoplay="3000" indicator-color="white">
       <van-swipe-item v-for="xxx in img" :key="xxx.id">
-        <img :src="xxx.imageUrl" style="width:100%;height:auto">
+        <img :src="xxx.imageUrl" style="width:100%;">
       </van-swipe-item>
     </van-swipe>
   </div>
 </template>
 <script>
-import Swiper from "swiper";
 export default {
   name: "Banner",
   components: {},

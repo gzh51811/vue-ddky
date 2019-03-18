@@ -21,8 +21,8 @@
     </div>
 
     <div class="flash_sale cl">
-      <img src="https://img.ddky.com/c/cms/temp/20190311/1552266763574_360_118.jpg" alt>
-      <img src="https://img.ddky.com/c/cms/temp/20190311/1552266956133_360_118.jpg" alt>
+      <img src="https://img.ddky.com/c/cms/temp/20190318/1552874076598_360_118.jpg" alt>
+      <img src="https://img.ddky.com/c/cms/temp/20190318/1552874150817_360_118.jpg" alt>
     </div>
   </div>
 </template>
@@ -51,7 +51,7 @@ export default {
 <style scoped>
 .mess {
   box-sizing: border-box;
-  padding: 0 15px;
+  /* padding: 0 15px; */
   margin-right:5px; 
   display: flex;
   height: 30px;

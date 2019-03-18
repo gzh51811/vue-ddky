@@ -2,6 +2,7 @@
 export default {
     state: {
         count: 0,
+        // home页面数据 名称为 home_sj
         home_sj: {
             data: {
                 topUrlNew:{
@@ -14,14 +15,25 @@ export default {
                 specialList:{
                     list:[]
                 },
+                categoryList:[]
             }
+        },
+        //home商品数据
+        shangpin:{
+            result:[{
+                infoVos:[{
+                    promotionTipList:[]
+                }],
+            }]
         }
-        // home页面数据 名称为 home_sj
     },
     mutations: {
         homemsg(state, n) {
             // 变更状态
             state.home_sj = n
+        },
+        goodsmsg(state,n){
+            state.shangpin=n
         }
     },
     actions: {
