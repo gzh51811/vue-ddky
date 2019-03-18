@@ -8,6 +8,9 @@ import home from "../components/one/home.vue"
 import mall from "../components/one/mall.vue"
 import spncart from "../components/one/spncart.vue"
 import mine from "../components/one/mine.vue"
+import login from "../components/one/login.vue"
+import reg from "../components/one/reg.vue"
+// import goods from "../components/one/goods.vue"
 
 let router = new VueRouter({
     routes: [{
@@ -39,6 +42,24 @@ let router = new VueRouter({
                 name: 'mine',
                 component: mine
             },
+            {
+                // 登录
+                path: '/login',
+                name: 'login',
+                component: login
+            },
+            {
+                // 注册
+                path: '/reg',
+                name: 'reg',
+                component: reg
+            },
+            // {
+            //     // 详情页
+            //     path: '/goods',
+            //     name: 'goods',
+            //     component: goods
+            // },
         ]
     }]
 });
