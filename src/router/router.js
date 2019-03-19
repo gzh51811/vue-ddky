@@ -55,12 +55,6 @@ let router = new VueRouter({
                 path: '/reg',
                 name: 'reg',
                 component: reg
-            },
-            {
-                // 我的
-                path: '/login',
-                name: 'login',
-                component: login
             }
         ]
     }, {

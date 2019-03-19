@@ -15,7 +15,6 @@ import {
 
 //vuex
 import store from './store'
-Vue.prototype.$axios = axios;
 
 import axios from 'axios'
 import VueAxios from 'vue-axios'
@@ -24,6 +23,8 @@ Vue.use(VueAxios,axios);
 // options 为可选参数，无则不传
 Vue.use(Lazyload);
 Vue.use(Vant);
+
+Vue.config.productionTip = false
 
 new Vue({
   render: h => h(App),
