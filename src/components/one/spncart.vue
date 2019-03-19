@@ -133,14 +133,6 @@ export default {
     Footer,
   },
   beforeCreate: function(){
-        console.log('开始请求页面数据');
-        var src="http://api.ddky.com/cms/rest.htm?sign=8071D558645AF8A7B9770EEBEC00C0DC&city=广州市&lat=23.1200491&lng=113.30764968&method=ddky.cms.product.detailfps.get&plat=H5&platform=H5&skuId=50034534&suite=1&t=2019-3-18%2014:50:41&v=1.0&versionName=4.9.0&callback=Zepto1552891839767";
-        // var src =this.$store.state.RequestLink_store.mall_category;
-        jsonp(src).then(result => {
-            // console.log('请求数据成功');
-            console.log(result);
-        }).catch(err => {
-            // console.log('请求数据成功');
             console.error(err);
         });
   },
