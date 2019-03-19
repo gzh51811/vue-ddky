@@ -8,7 +8,7 @@ Vue.config.productionTip = false
 
 import Vant from 'vant';
 import 'vant/lib/index.css';
-import axios from 'axios';
+
 import {
   Lazyload
 } from 'vant';

@@ -1,18 +1,21 @@
 <template>
      <div class="Instructions">
          <p><span>说明书</span></p>
-        <van-tabs type="card">
-            <van-tab title="布洛芬混悬液">
-                <img src="https://img.ddky.com/c/cms/instructions1/228527_0-181102043100765.png">
+         <van-tabs @click="onClick">
+            <van-tab :title="good.instructionsImg.instruction[0].name">
+                <img :src="good.instructionsImg.instruction[0].imgs[0].imgUrl"/>
             </van-tab>
-            <van-tab title="医用退热贴">
-                <img src="https://img.ddky.com/c/cms/instructions1/228527_0-181102043100815.png">   
+            <van-tab :title="good.instructionsImg.instruction[1].name">
+                <img :src="good.instructionsImg.instruction[1].imgs[0].imgUrl"/>
+                <img :src="good.instructionsImg.instruction[1].imgs[1].imgUrl" />
             </van-tab>
         </van-tabs>
+         
     </div>
 </template>
 <script>
 export default {
+    props:['good'],
     methods:{
         onClick(){
 
@@ -42,4 +45,5 @@ img{
     display: inline-block;
     width: 340px;
 }
+
 </style>
