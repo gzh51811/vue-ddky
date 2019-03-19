@@ -139,8 +139,11 @@ ol, ul ,li{list-style: none;}
     color: #4a4a4a;
 }
 /*头部的样式开始*/
-.headercon{
+/*.headercon{
     height: 160px;
+}*/
+header{
+    height: 145px;
 }
 .headbg{
     width: 100%;

@@ -7,8 +7,11 @@
                     <div class="shopInfo">
                         <h2>
                             <img src="https://img.ddky.com/c/wap/images/ddky2/kuai_icon.png">
-                            <span class="shopName">叮当智慧药房（广州）
+                            <span class="shopName">
+                            <!-- {{goodslist.data.detail.shopName}} -->
+                            <!-- 叮当智慧药房（广州） -->
                             <!-- 有限公司广州越秀东川路店 -->
+                            {{goodslist.detail.shopName}}
                             </span>
                             <span class="deliverTip red_col fr">急送,满¥28免运费</span>
                         </h2>
@@ -25,18 +28,24 @@
                         </div>
                         <div class="goodsInfo fl">
                             <div class="goodsImg fl">
-                                <img src="https://imgq.ddky.com/c/product/516532/big/z_1.jpg?t=1509699827236&amp;watermark%2F1%2Fimage%2FaHR0cHM6Ly9pbWdxLmRka3kuY29tL2Mvd2F0ZXJQaWMvMTA4MC5wbmc%3D%2Fdissolve%2F80%2Fgravity%2FCenter%2Fdx%2F0%2Fdy%2F0%7CimageMogr2%2Fauto-orient%2Fthumbnail%2F240x240%21%2Fquality%2F100">
+                                <img :src="goodslist.detail.imgUrl">
                                 <p class="stock-Info">还剩3件</p>
                             </div>
                             <div class="goods_description">
-                                <h3 class="">【2盒装】[盘龙云海]排毒养颜胶囊</h3>
-                                <p class="promotionsDesc">0.4gx70粒x2盒</p>
+                                <h3 class="">
+                                {{goodslist.detail.name}}
+                                <!-- 【2盒装】[盘龙云海]排毒养颜胶囊 -->
+                                </h3>
+                                <p class="promotionsDesc">
+                                {{goodslist.detail.productSpecifications}}
+                                <!-- 0.4gx70粒x2盒 -->
+                                </p>
                                 <p class="goods_promition"></p>
                                 <p class="noPrice" style="display: none;">
                                     <span class="nowisnoPrice" style="display: none;">暂无报价</span>
                                     <span class="fr">X3</span>
                                 </p>
-                                <p class="goodsPrice">￥169.00</p>
+                                <p class="goodsPrice">￥{{goodslist.detail.price}}</p>
                             </div>
                             <div class="goodsNum-edit">
                             <img src="https://img.ddky.com/c/wap/images/ddky2/jian_icon.png" class="fl">
@@ -50,12 +59,16 @@
                        <img src="https://img.ddky.com/c/wap/images/ddky2/oval_icon.png" class="oval"></div>
                        <div class="goodsInfo fl">
                            <div class="goodsImg fl">
-                               <img src="https://imgq.ddky.com/c/product/518675/big/z_1.jpg?t=1490255001647&amp;watermark%2F1%2Fimage%2FaHR0cHM6Ly9pbWdxLmRka3kuY29tL2Mvd2F0ZXJQaWMvMTA4MC5wbmc%3D%2Fdissolve%2F80%2Fgravity%2FCenter%2Fdx%2F0%2Fdy%2F0%7CimageMogr2%2Fauto-orient%2Fthumbnail%2F240x240%21%2Fquality%2F100">
+                               <img :src="goodslist.detail.imgUrl">
                                <p class="stock-Info">还剩4件</p>
                            </div>
                            <div class="goods_description">
                                <h3 class="">
-                                   【3盒装】[优思明]屈螺酮炔雌醇片</h3>
+                                   <!-- 【3盒装】[优思明]屈螺酮炔雌醇片 -->
+                                 {{goodslist.detail.name}}
+                                    
+
+                                   </h3>
                                    <p class="promotionsDesc">21片x3盒</p>
                                    <p class="goods_promition"></p>
                                    <p class="noPrice" style="display: none;">
@@ -78,6 +91,8 @@
        </div>
        <p class="notice">如含有处方药,需您凭处方经药店执业药师审核购买。
        </p><!---->
+       {{goodslist}}
+       <!-- {{detaile}} -->
        </div>
 </template>
 <script type="text/javascript">
@@ -85,6 +100,10 @@
         data(){
             return{};
         },
+        props:['goodslist'],
+        created(){
+            console.log(this.goodslist);
+        }
      }
 </script>
 <style type="text/css">
