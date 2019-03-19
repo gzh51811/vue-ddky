@@ -3,6 +3,9 @@ import App from './App.vue'
 // 引入路由文件
 import router from './router/router'
 
+
+Vue.config.productionTip = false
+
 import Vant from 'vant';
 import 'vant/lib/index.css';
 import axios from 'axios';
@@ -14,13 +17,14 @@ import {
 import store from './store'
 Vue.prototype.$axios = axios;
 
+import axios from 'axios'
+import VueAxios from 'vue-axios'
+Vue.use(VueAxios,axios);
 
 // options 为可选参数，无则不传
 Vue.use(Lazyload);
 Vue.use(Vant);
 
-
-Vue.config.productionTip = false
 new Vue({
   render: h => h(App),
   router: router,
