@@ -19,8 +19,8 @@ import jsonp from "../../assets/js/jsonpfz.js";
 export default {
   data() {
     return {
-        images: [
-          // this.$store.
+      images: [
+        // this.$store.
       ]
     };
   },
@@ -33,16 +33,7 @@ export default {
   },
   methods: {},
   beforeCreate: function() {
-    // console.log("开始请求home页面数据");
-    var src =this.$store.state.RequestLink_store.home_banner;
-    jsonp(src)
-      .then(result => {
-        // console.log(result);
-        this.$store.commit("homemsg", result);
-      })
-      .catch(err => {
-        console.error(err);
-      });
+    this.$store.dispatch("home_banner");
   }
 };
 </script>
