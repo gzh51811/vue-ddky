@@ -33,16 +33,7 @@ import jsonp from "../../assets/js/jsonpfz.js";
 export default {
   name: "good",
   beforeCreate: function() {
-    // console.log("开始请求home页面数据");
-    var src = this.$store.state.RequestLink_store.home_goods;
-    jsonp(src)
-      .then(result => {
-        // console.log(result);
-        this.$store.commit("goodsmsg", result);
-      })
-      .catch(err => {
-        console.error(err);
-      });
+    this.$store.dispatch("home_goods");
   },
   computed: {
     goods() {

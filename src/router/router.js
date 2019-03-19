@@ -55,8 +55,7 @@ let router = new VueRouter({
                 path: '/reg',
                 name: 'reg',
                 component: reg
-            },
-            
+            }
         ]
     }, {
         path: '/site',
