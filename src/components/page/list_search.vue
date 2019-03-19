@@ -1,7 +1,12 @@
 <template>
   <div id="Xlist" style="margin-bottom:50px">
     <div class="header cl">
-      <img src="https://img.ddky.com/c/wap/images/ddky2/home_icon2.png" alt class="toHomeUrl fl">
+      <img
+        src="https://img.ddky.com/c/wap/images/ddky2/home_icon2.png"
+        alt
+        class="toHomeUrl fl"
+        @click="homsss"
+      >
       <div class="headerLeft fl">
         <img src="https://img.ddky.com/c/wap/images/ddky2/icon_search.png" alt>
         <!---->
@@ -13,7 +18,11 @@
 </template>
 <script>
 export default {
-  name: "list_search"
+  methods: {
+    homsss(){
+      this.$router.history.push("/")
+    }
+  }
 };
 </script>
 

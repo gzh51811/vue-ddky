@@ -27,22 +27,38 @@ export default {
                     promotionTipList: []
                 }],
             }]
+        },
+        shoplists: {
+
+        }
+    },
+    getters: {
+        shoplists(state) {
+            return state.shoplists
         }
     },
     mutations: {},
     actions: {
         home_banner(context) {
             axios
-                .get(index.getters.severhttp+'api/home_banner')
+                .get(index.getters.severhttp + 'api/home_banner')
                 .then(function (response) {
                     context.state.home_sj = response.data
                 })
         },
         home_goods(context) {
             axios
-                .get(index.getters.severhttp+'api/home_goods')
+                .get(index.getters.severhttp + 'api/home_goods')
                 .then(function (response) {
                     context.state.shangpin = response.data
+                })
+        },
+        shoplists(context) {
+            axios
+                .get(index.getters.severhttp + 'api/shoplists')
+                .then(function (response) {
+                    context.state.shoplists = response.data
+                    console.log(context.state.shoplists)
                 })
         }
     }

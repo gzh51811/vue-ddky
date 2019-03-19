@@ -73,7 +73,7 @@ let router = new VueRouter({
             component: goods
         },
         {
-            path: '/Xlist',
+            path: '/Xlist/:id',
             name: "Xlist",
             component: Xlist
         }

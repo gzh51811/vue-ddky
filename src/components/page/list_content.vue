@@ -1,22 +1,23 @@
 <template>
   <div class="content">
-    <div class="items">
+
+    <div class="items" v-for="x in shoplists.data.productList" :key="x.id">
       <dl class="cl">
         <dt class="fl">
-          <img src="https://img.ddky.com/c/product/537938/small/z_1.jpg" alt>
+          <img :src="x.imgUrl" alt>
           <p></p>
         </dt>
         <dd class="goodsInfo fr">
           <h3>
-            <span class="sign">28分钟</span>
-            【2盒装】[扬子江]蓝芩口服液
+            <span class="sign">{{x.tab}}</span>
+            {{x.name}}
           </h3>
-          <p class="zhuzhi_info">清热解毒，利咽消肿。用于急性咽炎、肺胃实热证所致的咽痛、咽干、咽部灼热。</p>
-          <p class="other">10mlx12支x2盒</p>
+          <p class="zhuzhi_info">{{x.productDescription}}</p>
+          <p class="other">{{x.productSpecifications}}</p>
           <div class="goods_buyBox cl">
             <div class="aboutLeft fl">
-              <p class="setmeal fl">￥69.90</p>
-              <p class="sales fl">月售2139笔</p>
+              <p class="setmeal fl">￥{{x.productPrice}}</p>
+              <p class="sales fl">月售{{x.saleVolume}}笔</p>
             </div>
             <img
               src="https://img.ddky.com/c/wap/images/ddky2/icon_add_cart.png"
@@ -32,11 +33,26 @@
         </dd>
       </dl>
     </div>
+
   </div>
 </template>
 <script>
 export default {
-  name: "list_contents"
+  data() {
+    return {
+      // shoplists:this.$store.getters.shoplists
+    };
+  },
+  created: function() {
+    // 调用vuex请求 列表数据
+    this.$store.dispatch("shoplists");
+  },
+  computed: {
+    shoplists() {
+      console.log(this.$store.getters.shoplists);
+      return this.$store.getters.shoplists;
+    }
+  }
 };
 </script>
 <style scoped>
@@ -55,7 +71,7 @@ export default {
 }
 .items {
   width: 100%;
-  height: 155px;
+  height: 180px;
   box-sizing: border-box;
   padding-top: 10px;
   border-bottom: 1px solid#ccc;
