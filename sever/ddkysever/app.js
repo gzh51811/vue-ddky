@@ -3,11 +3,22 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+var session = require('express-session');
 
 var indexRouter = require('./routes/index');
 var apiRouter = require('./routes/api');
 
 var app = express();
+
+//应用模块
+app.use(session({
+  resave: true,
+  saveUninitialized: false,
+  secret: 'trwetwyacfdagy',
+  cookie: {
+    maxAge: 1000 * 60 * 120, // 设置 session 的有效时间，单位毫秒
+  }
+}));
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
