@@ -10,8 +10,6 @@ router.get('/mall_banner', function (req, res, next) {
             console.log('Error:' + err);
             return;
         }
-
-        
         res.json(result[0])
 
     });
