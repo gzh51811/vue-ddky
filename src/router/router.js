@@ -10,12 +10,15 @@ import spncart from "../components/one/spncart.vue"
 import mine from "../components/one/mine.vue"
 import reg from "../components/one/reg.vue"
 import login from "../components/one/login.vue"
+import site from "../components/one/site.vue"
+import search from "../components/one/search.vue"
 
 let router = new VueRouter({
     routes: [{
         path: '/',
         name: "one",
         component: one,
+        redirect: '/home',
         children: [{
                 // 叮当快药
                 path: '/home',
@@ -53,6 +56,14 @@ let router = new VueRouter({
                 component: login
             }
         ]
+    }, {
+        path: '/site',
+        name: "site",
+        component: site
+    }, {
+        path: '/search',
+        name: "search",
+        component: search
     }]
 });
 
