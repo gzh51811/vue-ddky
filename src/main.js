@@ -17,8 +17,9 @@ import {
 import store from './store'
 
 import axios from 'axios'
+import VueAxios from 'vue-axios'
+Vue.use(VueAxios,axios);
 
-Vue.prototype.$axios = axios;
 // options 为可选参数，无则不传
 Vue.use(Lazyload);
 Vue.use(Vant);

@@ -51,17 +51,7 @@ export default {
     searchvalue: function() {}
   },
   beforeCreate: function() {
-    // console.log("开始请求mall页面数据");
-
-    var src = this.$store.state.RequestLink_store.popularSearches;
-    jsonp(src)
-      .then(result => {
-        // console.log("mall页面数据开始存储")
-        this.$store.commit("hotssjcc", result);
-      })
-      .catch(err => {
-        console.error(err);
-      });
+    this.$store.dispatch('popularSearches')
   },
   computed: {
     hots() {

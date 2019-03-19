@@ -1,3 +1,4 @@
+import axios from 'axios'
 // home 页面store
 export default {
     state: {
@@ -5,38 +6,43 @@ export default {
         // home页面数据 名称为 home_sj
         home_sj: {
             data: {
-                topUrlNew:{
-                    topUrls:[]
+                topUrlNew: {
+                    topUrls: []
                 },
-                categoryList:[],
-                functionList:{
-                    list:[]
+                categoryList: [],
+                functionList: {
+                    list: []
                 },
-                specialList:{
-                    list:[]
+                specialList: {
+                    list: []
                 },
-                categoryList:[]
+                categoryList: []
             }
         },
         //home商品数据
-        shangpin:{
-            result:[{
-                infoVos:[{
-                    promotionTipList:[]
+        shangpin: {
+            result: [{
+                infoVos: [{
+                    promotionTipList: []
                 }],
             }]
         }
     },
-    mutations: {
-        homemsg(state, n) {
-            // 变更状态
-            state.home_sj = n
-        },
-        goodsmsg(state,n){
-            state.shangpin=n
-        }
-    },
+    mutations: {},
     actions: {
-
+        home_banner(context) {
+            axios
+                .get('http://localhost:3000/api/home_banner')
+                .then(function (response) {
+                    context.state.home_sj = response.data
+                })
+        },
+        home_goods(context) {
+            axios
+                .get('http://localhost:3000/api/home_goods')
+                .then(function (response) {
+                    context.state.shangpin = response.data
+                })
+        }
     }
 }
