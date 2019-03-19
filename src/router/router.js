@@ -12,7 +12,7 @@ import reg from "../components/one/reg.vue"
 import login from "../components/one/login.vue"
 import site from "../components/one/site.vue"
 import search from "../components/one/search.vue"
-
+import Xlist from "../components/one/Xlist.vue"
 let router = new VueRouter({
     routes: [{
         path: '/',
@@ -64,6 +64,11 @@ let router = new VueRouter({
         path: '/search',
         name: "search",
         component: search
+    },
+    {
+        path: '/Xlist',
+        name: "Xlist",
+        component: Xlist
     }]
 });
 

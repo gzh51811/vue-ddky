@@ -1,6 +1,6 @@
 <template>
   <div class="drugList">
-    <div class="drugType" v-for="aa in icon" :key="aa.categoryId">
+    <div class="drugType" v-for="aa in icon" :key="aa.categoryId" @click="toList">
       <img :src="aa.categoryIcon" alt>
       <p>{{aa.categoryName}}</p>
     </div>
@@ -10,11 +10,14 @@
 <script>
 export default {
   name: "list",
-  
    computed: {
     icon() {
-      // console.log(this.$store.state.homemsg.home_sj.data.categoryList);
       return this.$store.state.homemsg.home_sj.data.categoryList;
+    }
+  },
+  methods:{
+    toList(){
+      this.$router.history.push("/Xlist")
     }
   }
 };
