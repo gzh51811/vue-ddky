@@ -24,6 +24,10 @@ Vue.use(VueAxios,axios);
 Vue.use(Lazyload);
 Vue.use(Vant);
 
+
+//引入jsonp(跨域)
+// import jsonp from './assets/js/jsonpfz.js';
+
 new Vue({
   render: h => h(App),
   router: router,
