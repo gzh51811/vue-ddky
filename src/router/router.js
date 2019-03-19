@@ -10,7 +10,7 @@ import spncart from "../components/one/spncart.vue"
 import mine from "../components/one/mine.vue"
 import login from "../components/one/login.vue"
 import reg from "../components/one/reg.vue"
-// import goods from "../components/one/goods.vue"
+import goods from "../components/one/goods.vue"
 import site from "../components/one/site.vue"
 import search from "../components/one/search.vue"
 
@@ -56,12 +56,7 @@ let router = new VueRouter({
                 name: 'reg',
                 component: reg
             },
-            // {
-            //     // 详情页
-            //     path: '/goods',
-            //     name: 'goods',
-            //     component: goods
-            // },
+            
         ]
     }, {
         path: '/site',
@@ -71,7 +66,15 @@ let router = new VueRouter({
         path: '/search',
         name: "search",
         component: search
-    }]
+    },
+    {
+        // 详情页
+        path: '/goods',
+        name: 'goods',
+        component: goods
+    },
+    
+]
 });
 
 export default router
