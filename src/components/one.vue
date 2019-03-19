@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="one">
     <!-- 底部标签栏控制 - 路由出口 -->
     <router-view></router-view>
     <!-- 底部标签栏 -->
@@ -73,7 +73,7 @@ export default {
       this.active = 1;
     } else if (this.$route.name === "spncart") {
       this.active = 2;
-    } else if (this.$route.name === "mine") {
+    } else if (this.$route.name === "mine"||this.$route.name === "login"||this.$route.name === "reg") {
       this.active = 3;
     }
   }

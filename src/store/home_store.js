@@ -1,4 +1,5 @@
 import axios from 'axios'
+import index from './index'
 // home 页面store
 export default {
     state: {
@@ -32,14 +33,14 @@ export default {
     actions: {
         home_banner(context) {
             axios
-                .get('http://localhost:3000/api/home_banner')
+                .get(index.getters.severhttp+'api/home_banner')
                 .then(function (response) {
                     context.state.home_sj = response.data
                 })
         },
         home_goods(context) {
             axios
-                .get('http://localhost:3000/api/home_goods')
+                .get(index.getters.severhttp+'api/home_goods')
                 .then(function (response) {
                     context.state.shangpin = response.data
                 })

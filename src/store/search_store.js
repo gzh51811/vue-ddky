@@ -1,5 +1,5 @@
 import axios from 'axios'
-
+import index from './index'
 // mall 页面store
 export default {
     state: {
@@ -16,7 +16,7 @@ export default {
     actions:{
         popularSearches(context) {
             axios
-                .get('http://localhost:3000/api/popularSearches')
+                .get(index.getters.severhttp+'api/popularSearches')
                 .then(function (response) {
                     console.log(response)
                     console.log(context.state.mallsj)

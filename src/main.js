@@ -8,7 +8,6 @@ Vue.config.productionTip = false
 
 import Vant from 'vant';
 import 'vant/lib/index.css';
-
 import {
   Lazyload
 } from 'vant';
@@ -20,18 +19,17 @@ import axios from 'axios'
 import VueAxios from 'vue-axios'
 Vue.use(VueAxios,axios);
 
+
 // options 为可选参数，无则不传
 Vue.use(Lazyload);
 Vue.use(Vant);
 
-
-//引入jsonp(跨域)
-// import jsonp from './assets/js/jsonpfz.js';
+Vue.config.productionTip = false
 
 new Vue({
   render: h => h(App),
   router: router,
-  store
+  store:store
 }).$mount('#app')
 
 // 订单快要主题色-#F93935
