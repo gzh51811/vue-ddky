@@ -94,11 +94,11 @@ export default {
   },
   mounted(){
         console.log('开始请求页面数据');
-        var src="sign=8071D558645AF8A7B9770EEBEC00C0DC&city=广州市&lat=23.1200491&lng=113.30764968&method=ddky.cms.product.detailfps.get&plat=H5&platform=H5&skuId=50034534&suite=1&t=2019-3-18%2014:50:41&v=1.0&versionName=4.9.0&callback=Zepto1552891839767";
+        var src="https://api.ddky.com/cms/rest.htm?sign=2FC92B2A81A0318830D7530FEE7D844B&city=%E5%B9%BF%E5%B7%9E%E5%B8%82&lat=23.1200491&lng=113.30764968&loginToken=46997443576320445e34a6cf726ffe3a&method=ddky.cms.product.detailfps.get&plat=H5&platform=H5&skuId=50054881&suite=1&t=2019-3-18%2022:30:57&uDate=58927020190314&userId=1016718971&v=1.0&versionName=4.9.0&callback=Zepto1552919457295";
         jsonp(src)
         .then(result => {
             // console.log('请求数据成功');
-            console.log(result);
+            // console.log(result);
         })
         .catch(err => {
             // console.log('请求数据成功');
