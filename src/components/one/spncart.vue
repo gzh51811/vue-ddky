@@ -134,8 +134,7 @@ export default {
   },
   beforeCreate: function(){
             console.error(err);
-        });
-  },
+  }
 }
 
 
