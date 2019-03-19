@@ -57,7 +57,7 @@ export default {
   width: 100%;
   height: 155px;
   box-sizing: border-box;
-  padding-top: 15px;
+  padding-top: 10px;
   border-bottom: 1px solid#ccc;
 }
 dt {
@@ -69,6 +69,7 @@ dl dt img {
 dd {
   width: 65%;
   margin-left: 10px;
+  position: relative;
 }
 h3 {
   font-size: 12px;
@@ -99,8 +100,14 @@ h3 {
   font-size: 12px;
   color: #ea2222;
   padding: 3px;
-  margin-right: 10px;
   border-radius: 3px;
+  margin-right: 5px;
+}
+.prootiomBox {
+  width: 130px;
+  height: 24px;
+  position: absolute;
+  bottom: 0px;
 }
 .addCarImg {
   width: 36px;

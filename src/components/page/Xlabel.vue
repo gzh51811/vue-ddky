@@ -15,13 +15,11 @@
 </template>
 <script>
 export default {
-    name:"Xlabel",
-    methods:{
-        change(){
-            
-        }
-    }
-}
+  name: "Xlabel",
+  methods: {
+    change() {}
+  }
+};
 </script>
 
 <style scoped>
@@ -40,14 +38,14 @@ export default {
   border: 1px solid #e94544;
 }
 .headList span {
-  height: 35px;
-  line-height: 35px;
   border: 1px solid #ddd;
   color: #333;
   border-radius: 30px;
   padding: 4px 16px;
   font-size: 12px;
+  text-align: center;
   margin-right: 2px;
+  margin-top: 5px;
 }
 .chufangBox,
 .headList,
@@ -56,6 +54,6 @@ export default {
   margin-bottom: 1px;
 }
 .top span {
-  width: 25%;
+  flex: 1;
 }
 </style>

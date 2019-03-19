@@ -1,5 +1,5 @@
 <template>
-     <div id="Xlist" style="margin-bottom:50px">
+  <div id="Xlist" style="margin-bottom:50px">
     <div class="header cl">
       <img src="https://img.ddky.com/c/wap/images/ddky2/home_icon2.png" alt class="toHomeUrl fl">
       <div class="headerLeft fl">
@@ -13,8 +13,8 @@
 </template>
 <script>
 export default {
-    name:"list_search"
-}
+  name: "list_search"
+};
 </script>
 
 
@@ -31,7 +31,7 @@ export default {
   padding-top: 7px;
 }
 .toHomeUrl {
-  width: 7%;
+  width: 8%;
   height: 25px;
   margin: 4px 7px;
 }
@@ -39,7 +39,7 @@ export default {
   float: left;
 }
 .headerLeft {
-  width: 74%;
+  width: 70%;
   line-height: 30px;
   border: none;
   box-sizing: border-box;
@@ -57,11 +57,12 @@ export default {
 .toSearch {
   font-size: 17px;
   margin-left: 8px;
-  width: 15%;
+  width: 14%;
 }
 .searchTxt {
   border: none;
   background: #eee;
+  font-size: 12px;
 }
 .headerLeft,
 .searchTxt,
