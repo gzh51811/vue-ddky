@@ -1,4 +1,5 @@
 import axios from 'axios'
+import index from './index'
 // mall 页面store
 export default {
     state: {
@@ -24,7 +25,7 @@ export default {
         mall_banner(context) {
             // 异步请求存储 mall轮播图数据
             axios
-                .get('http://localhost:3000/api/mall_banner')
+                .get(index.getters.severhttp+'api/mall_banner')
                 .then(function (response) {
                     console.log(response)
                     console.log(context.state.mallsj)
@@ -33,7 +34,7 @@ export default {
         },
         mall_category(context) {
             axios
-                .get('http://localhost:3000/api/mall_category')
+                .get(index.getters.severhttp+'api/mall_category')
                 .then(function (response) {
                     console.log(response)
                     console.log(context.state.mallsj)

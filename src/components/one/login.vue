@@ -1,6 +1,6 @@
 <template>
-      <van-tabs @click="onClick">
-        <van-tab title="快速登录">
+  <van-tabs @click="onClick">
+    <!-- <van-tab title="快速登录">
             <div class="tabone">
                 <div class="tabColor">
                     <li class="quick">
@@ -24,160 +24,155 @@
                     </div>
                 </div>
             </div>
-        </van-tab>
-
-
-      <van-tab title="密码登录">
-          <div class="tabTwo">
-              <li class="passwordLogin">
-                <input type="text" id="tel" name="" placeholder="请输入手机号码" class="user" v-model="phoneNum">
-              </li>
-              <li class="pwdLogin">
-                <input type="password" name="" placeholder="请输入登录密码" class="pwd" v-model="pswNum">
-              </li>
-              <li class="last">
+    </van-tab>-->
+    <van-tab title="密码登录">
+      <div class="tabTwo">
+        <li class="passwordLogin">
+          <input type="text" id="tel" name placeholder="请输入手机号码" class="user" v-model="phoneNum">
+        </li>
+        <li class="pwdLogin">
+          <input type="password" name placeholder="请输入登录密码" class="pwd" v-model="pswNum">
+        </li>
+        <!-- <li class="last">
                   <a href="resetpassword.html" class="fl forget">忘记密码 ?</a>
-              </li>
-              
-          </div>
-          <div class="tabButtom">
-            <div class="login-btnbox cl" @click="login">
-                <p class="btn-login">登录</p>
-            </div>
-            <p class="goreg">还没有账号？快去
-              <a class="start-zhuce" href="###" @click="gotoReg">注册一下</a>
-            </p>
-          </div>
-      </van-tab>
-</van-tabs>
-
-
+        </li>-->
+      </div>
+      <div class="tabButtom">
+        <div class="login-btnbox cl" @click="login">
+          <p class="btn-login">登录</p>
+        </div>
+        <p class="goreg">
+          还没有账号？快去
+          <a class="start-zhuce" href="javascript:;" @click="gotoReg">注册一下</a>
+        </p>
+      </div>
+    </van-tab>
+  </van-tabs>
 </template>
 <script>
-import { constants } from 'fs';
+import axios from "axios";
 export default {
-  data(){
-     return{
-       phoneNum:'',
-       pswNum:'',
-     }
+  data() {
+    return {
+      phoneNum: "",
+      pswNum: ""
+    };
   },
   methods: {
-    onClick() {
-      
-    },
+    onClick() {},
     login() {
-      // console.log(11111)
-      if(this.phoneNum&&this.pswNum){
-            var params = new URLSearchParams();
-             params.append("phoneNum", this.phoneNum); //你要传给后台的参数值 key/value
-             params.append("pswNum", this.pswNum);
-            //  console.log(this.phoneNum,this.pswNum)
-            this.$axios({
-              method:'post',
-              url:"http://localhost:1811/vue-ddky/src/api/login.php",
-              data:params
-            }).then(res=>{
-              // console.log(res)
-              if(res.data =='yes'){//账号密码正确
-                  alert('登录成功！即将跳往首页');
-                  this.$router.push('/home');
-              }else{
-                alert('账号或密码不正确，请重新输入！')
-              }
-            })
-      }else{
-        alert('请输入登录账号及密码')
+      console.log(this.$store.getters.severhttp);
+
+      if (this.phoneNum !== "" && this.pswNum !== "") {
+        var params = {
+          phoneNum: this.phoneNum,
+          pswNum: this.pswNum
+        };
+        this.$store.dispatch("usernc", params);
       }
     },
-    gotoReg(){
-      this.$router.push('/reg');
-    },
+    gotoReg() {
+      this.$router.push("/reg");
+    }
   },
+  computed: {
+    usern() {
+      // console.log(this.$store.state.mall.mallsj.data.mallBannerModule.topUrls);
 
+      return this.$store.getters.usern;
+    }
+  },
+  watch: {
+    usern: function(newQuestion, oldQuestion) {
+      if (this.$store.getters.usern != "") {
+        console.log("用户名改变");
+        this.$router.push("/mine");
+      }
+    }
+  }
 };
 </script>
 <style lang="less" scoped>
 //密码登录
-.tabTwo{
-   height: 150px;
+.tabTwo {
+  height: 150px;
 }
-.tabButtoms{
-   padding-top: 15px;
-    height: 300px;
-    // background: #f5f5f5;
+.tabButtoms {
+  padding-top: 15px;
+  height: 300px;
+  // background: #f5f5f5;
 }
-.passwordLogin{
-    width: 90%;
-    margin: 25px auto ;
-    font-size: 16px;
-    line-height: 34.5px;
-    border: 1px solid #d8d8d8;
-    position: relative;
-    background: #fafafa;
-    border-radius: 5px;
-}
-#tel{
- font-size: 12px;
-    line-height: 18px;
-    padding: 8px 20px;
-    border: none;
-    display: inline-block;
-    background: #fafafa;
-    // width: -webkit-calc(100% - 100px);
-}
-.pwdLogin{
+.passwordLogin {
   width: 90%;
-    margin: 20px auto 0;
-    font-size: 16px;
-    line-height: 34.5px;
-    border: 1px solid #d8d8d8;
-    position: relative;
-    background: #fafafa;
-    border-radius: 5px;
+  margin: 25px auto;
+  font-size: 16px;
+  line-height: 34.5px;
+  border: 1px solid #d8d8d8;
+  position: relative;
+  background: #fafafa;
+  border-radius: 5px;
 }
-.pwdLogin input{
+#tel {
   font-size: 12px;
-    line-height: 18px;
-    padding: 8px 20px;
-    border: none;
-    display: inline-block;
-    background: #fafafa;
-    // width: -webkit-calc(100% - 100px);
+  line-height: 18px;
+  padding: 8px 20px;
+  border: none;
+  display: inline-block;
+  background: #fafafa;
+  // width: -webkit-calc(100% - 100px);
 }
-.last{
-    width: 90%;
-    margin: 15px auto 0;
-    font-size: 16px;
-    line-height: 34.5px;
-    border: none;
-    margin-top: 10px;
+.pwdLogin {
+  width: 90%;
+  margin: 20px auto 0;
+  font-size: 16px;
+  line-height: 34.5px;
+  border: 1px solid #d8d8d8;
+  position: relative;
+  background: #fafafa;
+  border-radius: 5px;
 }
-.last a{
+.pwdLogin input {
+  font-size: 12px;
+  line-height: 18px;
+  padding: 8px 20px;
+  border: none;
+  display: inline-block;
+  background: #fafafa;
+  // width: -webkit-calc(100% - 100px);
+}
+.last {
+  width: 90%;
+  margin: 15px auto 0;
+  font-size: 16px;
+  line-height: 34.5px;
+  border: none;
+  margin-top: 10px;
+}
+.last a {
   color: #999;
   text-decoration: underline;
-    font-size: 12px;
-    line-height: 20px;
+  font-size: 12px;
+  line-height: 20px;
 }
-.goreg{
+.goreg {
   height: 40px;
   line-height: 40px;
   font-size: 14px;
-  width:90%;
+  width: 90%;
   margin: 0 auto;
   text-align: center;
 }
-.goreg a{
-  color:#cc3333;
+.goreg a {
+  color: #cc3333;
 }
 //快速登录
 .tabColor {
   height: 150px;
 }
-.tabButtom{
-   padding-top: 15px;
-    height: 300px;
-    // background: #f5f5f5;
+.tabButtom {
+  padding-top: 15px;
+  height: 300px;
+  // background: #f5f5f5;
 }
 li {
   list-style: none;
@@ -215,27 +210,27 @@ li {
   top: 4px;
 }
 .cl-li {
-      width: 90%;
-    margin: 15px auto 0;
-    font-size: 16px;
-    line-height: 34.5px;
-    border: 1px solid #d8d8d8;
-    position: relative;
-    background: #fafafa;
-    border-radius: 5px;
-    border: none;
-    background: #fff;
+  width: 90%;
+  margin: 15px auto 0;
+  font-size: 16px;
+  line-height: 34.5px;
+  border: 1px solid #d8d8d8;
+  position: relative;
+  background: #fafafa;
+  border-radius: 5px;
+  border: none;
+  background: #fff;
 }
 .cl-li input {
   line-height: 18px;
-    padding: 8px 20px;
-    border: none;
-    display: inline-block;
-    background: #fafafa;
-    font-size: 10px;
-    // width: -webkit-calc(100% - 100px);
+  padding: 8px 20px;
+  border: none;
+  display: inline-block;
+  background: #fafafa;
+  font-size: 10px;
+  // width: -webkit-calc(100% - 100px);
 }
-li .smsCode{
+li .smsCode {
   display: inline-block;
   width: 60%;
   border: 1px solid #d8d8d8;
@@ -244,38 +239,37 @@ li .smsCode{
 }
 .huoqu {
   position: absolute;
-    top: 50%;
-    right: 0;
-    margin-top: -17.5px;
-    font-size: 10px;
-    width: 23%;
-    height: 34.5px;
-    border-radius: 5px;
-    line-height: 38px;
-    color: #fff;
-    text-align: center;
-    background: #F08800;
+  top: 50%;
+  right: 0;
+  margin-top: -17.5px;
+  font-size: 10px;
+  width: 23%;
+  height: 34.5px;
+  border-radius: 5px;
+  line-height: 38px;
+  color: #fff;
+  text-align: center;
+  background: #f08800;
 }
-.voiceYanzheng{
-    font-size: 12px;
-    text-align: center;
-    padding-right: 10px;
-    margin-top: 20px;
-    color: #9b9b9b;
+.voiceYanzheng {
+  font-size: 12px;
+  text-align: center;
+  padding-right: 10px;
+  margin-top: 20px;
+  color: #9b9b9b;
 }
-.voiceYanzheng a{
-    color:#cc3333
+.voiceYanzheng a {
+  color: #cc3333;
 }
-.login-btnbox{
-  width:80%;
-  margin:0 auto;
-  background:#cc3333;
+.login-btnbox {
+  width: 80%;
+  margin: 0 auto;
+  background: #cc3333;
   height: 40px;
   border-radius: 20px;
   line-height: 40px;
   text-align: center;
   font-size: 13px;
-  color:#fff;
+  color: #fff;
 }
-
 </style>

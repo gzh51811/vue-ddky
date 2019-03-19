@@ -8,7 +8,6 @@ Vue.config.productionTip = false
 
 import Vant from 'vant';
 import 'vant/lib/index.css';
-import axios from 'axios';
 import {
   Lazyload
 } from 'vant';
@@ -30,7 +29,7 @@ Vue.config.productionTip = false
 new Vue({
   render: h => h(App),
   router: router,
-  store
+  store:store
 }).$mount('#app')
 
 // 订单快要主题色-#F93935
