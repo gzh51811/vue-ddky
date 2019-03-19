@@ -8,8 +8,9 @@ import home from "../components/one/home.vue"
 import mall from "../components/one/mall.vue"
 import spncart from "../components/one/spncart.vue"
 import mine from "../components/one/mine.vue"
-import reg from "../components/one/reg.vue"
 import login from "../components/one/login.vue"
+import reg from "../components/one/reg.vue"
+import goods from "../components/one/goods.vue"
 import site from "../components/one/site.vue"
 import search from "../components/one/search.vue"
 import Xlist from "../components/one/Xlist.vue"
@@ -44,16 +45,16 @@ let router = new VueRouter({
                 component: mine
             },
             {
-                // 我的
-                path: '/reg',
-                name: 'reg',
-                component: reg
-            },
-            {
-                // 我的
+                // 登录
                 path: '/login',
                 name: 'login',
                 component: login
+            },
+            {
+                // 注册
+                path: '/reg',
+                name: 'reg',
+                component: reg
             }
         ]
     }, {
@@ -66,10 +67,20 @@ let router = new VueRouter({
         component: search
     },
     {
+<<<<<<< HEAD
         path: '/Xlist',
         name: "Xlist",
         component: Xlist
     }]
+=======
+        // 详情页
+        path: '/goods',
+        name: 'goods',
+        component: goods
+    },
+    
+]
+>>>>>>> 2613be6e4409a4f6a6cc3148daae96bc29bfc05b
 });
 
 export default router
