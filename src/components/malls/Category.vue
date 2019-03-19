@@ -49,19 +49,8 @@ export default {
     }
   },
   beforeCreate: function() {
-    // console.log("开始请求mall页面数据");
+    this.$store.dispatch('mall_category')
 
-    var src =this.$store.state.RequestLink_store.mall_category
-
-    jsonp(src)
-      .then(result => {
-        // console.log("mall页面数据开始存储")
-        this.$store.commit("categorysj", result);
-      })
-      .catch(err => {
-        console.error(err);
-      });
-    // console.log("mall页面数据请求结束");
   }
 };
 </script>
