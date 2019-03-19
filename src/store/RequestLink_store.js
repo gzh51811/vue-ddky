@@ -19,5 +19,6 @@ export default {
             ,
         shoplists: "https://api.ddky.com/cms/rest.htm?sign=3E48A7C299C47777208C50D182D72ECC&city=%E5%B9%BF%E5%B7%9E%E5%B8%82&compositeId=3&idfa=9CCAB4199C500F48660E8616CFAA0E68&lat=23.1200491&lng=113.30764968&method=ddky.cms.search.cate.list&orderTypeId=0&pageNo=1&pageSize=20&plat=H5&platform=H5&shopId=202132&suite=1&t=2019-3-19%2010:33:18&userId=&v=1.0&versionName=4.9.0&wd=&callback=Zepto1552962798819",
         shop: "https://api.ddky.com/cms/rest.htm?sign=5101335AD08F2E2EC77D334DF38908A0&city=%E5%B9%BF%E5%B7%9E%E5%B8%82&lat=23.1200491&lng=113.30764968&loginToken=46997443576320445e34a6cf726ffe3a&method=ddky.cms.product.detailfps.get&plat=H5&platform=H5&skuId=10649801&suite=1&t=2019-3-19%2010:54:37&uDate=58927020190314&userId=1016718971&v=1.0&versionName=4.9.0&callback=Zepto1552964077347"
+
     }
 }
