@@ -11,15 +11,17 @@ import home_store from './home_store'
 import RequestLink_store from './RequestLink_store'
 // 搜索页面数据
 import search_store from './search_store'
-import {
-    nearer
-} from 'q';
+
+// 详情页面数据
+import goods_store from './goods_store'
+
 export default new vuex.Store({
     modules: {
         mall: mall_store,
         homemsg: home_store,
         RequestLink_store: RequestLink_store,
-        search_store: search_store
+        search_store: search_store,
+        goods_store: goods_store
     },
     state: {
         severhttp: "http://localhost:3000/",
@@ -81,6 +83,7 @@ export default new vuex.Store({
                 .then(function (response) {
                     context.state.usern = "";
                     sc("usern")
+
                     function sc(cname) {
                         document.cookie = cname + "=" + ";" + 'expires=Thu, 01 Jan 1970 00:00:00 GMT' + "; path=/";
                         return '删除成功';

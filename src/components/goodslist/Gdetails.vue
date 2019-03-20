@@ -1,26 +1,27 @@
 <template>
      <div class="Instructions">
          <p><span>说明书</span></p>
-         <van-tabs @click="onClick">
-            <van-tab :title="good.instructionsImg.instruction[0].name">
-                <img :src="good.instructionsImg.instruction[0].imgs[0].imgUrl"/>
+         <!-- <van-tabs @click="onClick">
+            <van-tab :title="goodssj.data.instructionsImg.instruction[0].name">
+                <img :src="goodssj.data.instructionsImg.instruction[0].imgs[0].imgUrl"/>
             </van-tab>
-            <van-tab :title="good.instructionsImg.instruction[1].name">
-                <img :src="good.instructionsImg.instruction[1].imgs[0].imgUrl"/>
-                <img :src="good.instructionsImg.instruction[1].imgs[1].imgUrl" />
-            </van-tab>
-        </van-tabs>
+            <van-tab :title="goodssj.data.instructionsImg.instruction[1].name">
+                <img :src="goodssj.data.instructionsImg.instruction[1].imgs[0].imgUrl"/>
+                <img :src="goodssj.data.instructionsImg.instruction[1].imgs[1].imgUrl" />
+            </van-tab> -->
+        <!-- </van-tabs> -->
+        <img v-for="(xx,index) in goodssj.data.instructionsImg.instruction[0].imgs " :src="xx.imgUrl" :key="index"/>
          
     </div>
 </template>
 <script>
 export default {
-    props:['good'],
-    methods:{
-        onClick(){
-
-        },
+    computed: {
+    goodssj() {
+      console.log(this.$store.getters.goodssj);
+      return this.$store.getters.goodssj;
     }
+  }
 };
 </script>
 <style lang="less" scoped>
