@@ -1,30 +1,35 @@
 <template>
-    <li class="lunbo">
-            <van-swipe :autoplay="3000" indicator-color="white">
-                <van-swipe-item><img :src="goodsss.detail.imgUrl"/></van-swipe-item>
-                <van-swipe-item><img :src="goodsss.detail.imgUrl"/></van-swipe-item>
-            </van-swipe>
-            
-    </li>
+  <div class="lunbo">
+    <van-swipe :autoplay="3000" indicator-color="white">
+
+      <van-swipe-item v-for="(ss,index) in goodssj.data.detail.imgUrls" :key="index">
+        <img :src="ss">
+      </van-swipe-item>
+
+    </van-swipe>
+  </div>
 </template>
 <script>
 export default {
-    props:["goodsss"],
-}
+  computed: {
+    goodssj() {
+      console.log(this.$store.getters.goodssj);
+      return this.$store.getters.goodssj;
+    }
+  }
+};
 </script>
 <style lang="less" scoped>
-.lunbo{
-    width: 100%;
-    height: 218px;
-    border-bottom: 1px solid #ccc;
+.lunbo {
+  width: 100%;
+  height: 255px;
+//   border-bottom: 1px solid #ccc;
+//   padding-bottom: 20px
 }
-li{
-    list-style: none;
-}
-img{
-    padding-left: 30%;
-    padding-top: 5%;
-    width: 160px;
+img {
+//   width: 100%;
+  height: 255px;
+  margin-left: 60px;
 }
 </style>
 

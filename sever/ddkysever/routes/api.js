@@ -90,6 +90,17 @@ router.get('/shop', function (req, res, next) {
     });
 });
 
+router.get('/goods', function (req, res, next) {
+    mongodb_gnj.cx("ddkysj", "goods", {}, function (err, result) {
+        if (err) {
+            console.log('Error:' + err);
+            return;
+        }
+        res.json(result[0])
+
+    });
+});
+
 // dl
 router.get('/login', function (req, res, next) {
     console.log("用户开始登陆")

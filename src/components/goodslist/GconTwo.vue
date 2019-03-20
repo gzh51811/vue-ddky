@@ -1,8 +1,8 @@
 <template>
            <div>
                 <p class="peisong-info">
-                <img :src="goodss.detail.deliveryInfo.logo"/>
-                <span>&nbsp;&nbsp;{{goodss.detail.deliveryInfo.title1}}</span>
+                <img :src="goodssj.data.detail.deliveryInfo.logo"/>
+                <span>&nbsp;&nbsp;{{goodssj.data.detail.deliveryInfo.title1}}</span>
             </p>
             <p class="foryou"><span class="shopName fl">本商品由叮当智慧药房（广州）有限公司广州越秀东川路店为您服务</span>
             <van-icon name="weapp-nav" class='icon' />
@@ -11,16 +11,16 @@
             <div class="promotionBox">
                 <p class="fl">促销</p>
                 <ul class="fl">
-                    <li><span class="promotion">{{goodss.detail.promotionsList[0].promotionsType}}</span>{{goodss.detail.promotionsList[0].promotionsDesc}}</li>   
-                    <li><span class="promotion">1元换购</span>{{goodss.detail.promotionsList[1].promotionsDesc}}</li>
+                    <li><span class="promotion">{{goodssj.data.detail.promotionsList[0].promotionsType}}</span>{{goodssj.data.detail.promotionsList[0].promotionsDesc}}</li>   
+                    <li><span class="promotion">1元换购</span>{{goodssj.data.detail.promotionsList[1].promotionsDesc}}</li>
                 </ul>
                 <img src="https://img.ddky.com/c/wap/images/ddky2/clickpoint.png" class="fr">
             </div>
             <div class="box"></div>
             <div class="favourable">
-                <p style="float:left">好评度&nbsp;&nbsp;<span class="red_col">{{goodss.detail.positiveCommentCountPercentStr}}</span></p>
+                <p style="float:left">好评度&nbsp;&nbsp;<span class="red_col">{{goodssj.data.detail.positiveCommentCountPercentStr}}</span></p>
                 <p style="float:right" class="comment">
-                <span>{{goodss.detail.totalCommentCount}}条评价>></span>
+                <span>{{goodssj.data.detail.totalCommentCount}}条评价>></span>
                 </p>
             </div>
             <div class="box"></div>
@@ -28,7 +28,12 @@
 </template>
 <script>
 export default {
-    props:['goodss'],
+    computed: {
+    goodssj() {
+      console.log(this.$store.getters.goodssj);
+      return this.$store.getters.goodssj;
+    }
+  }
 }
 </script>
 <style lang="less" scoped>
