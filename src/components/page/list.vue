@@ -17,7 +17,8 @@ export default {
   },
   methods:{
     toList(){
-      this.$router.history.push("/Xlist")
+      this.$router.history.push({ path: `/Xlist/${425245}` })
+      // router.push({ path: `/Xlist/${425245}` })
     }
   }
 };
