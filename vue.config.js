@@ -1,9 +1,15 @@
 module.exports = {
   css: {
-    loaderOptions: { // 向 CSS 相关的 loader 传递选项
-      less: {
+    loaderOptions: { less: {
         javascriptEnabled: true
       }
     }
-  }
+  },
+
+  publicPath: undefined,
+  outputDir: undefined,
+  assetsDir: undefined,
+  runtimeCompiler: undefined,
+  productionSourceMap: undefined,
+  parallel: undefined
 }
