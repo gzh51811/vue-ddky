@@ -16,70 +16,6 @@ import search from "../components/one/search.vue"
 import Xlist from "../components/one/Xlist.vue"
 let router = new VueRouter({
     routes: [{
-<<<<<<< HEAD
-        path: '/',
-        name: "one",
-        component: one,
-        redirect: '/home',
-        children: [{
-                // 叮当快药
-                path: '/home',
-                name: 'home',
-                component: home
-            },
-            {
-                // 叮当商城
-                path: '/mall',
-                name: 'mall',
-                component: mall
-            },
-            {
-                // 清单列表
-                path: '/spncart',
-                name: 'spncart',
-                component: spncart
-            },
-            {
-                // 我的
-                path: '/mine',
-                name: 'mine',
-                component: mine
-            },
-            {
-                // 登录
-                path: '/login',
-                name: 'login',
-                component: login
-            },
-            {
-                // 注册
-                path: '/reg',
-                name: 'reg',
-                component: reg
-            }
-        ]
-    }, {
-        path: '/site',
-        name: "site",
-        component: site
-    }, {
-        path: '/search',
-        name: "search",
-        component: search
-    },
-    {
-        path: '/Xlist',
-        name: "Xlist",
-        component: Xlist
-    },{
-        // 详情页
-        path: '/goods',
-        name: 'goods',
-        component: goods
-    },
-    
-]
-=======
             path: '/',
             name: "one",
             component: one,
@@ -142,7 +78,6 @@ let router = new VueRouter({
             component: Xlist
         }
     ]
->>>>>>> bb4366aa80aad910eac04c40cd4b725e4d59a6c6
 });
 
 export default router
