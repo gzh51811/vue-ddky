@@ -2,7 +2,7 @@
   <div>
     <van-swipe :autoplay="3000" indicator-color="white">
       <van-swipe-item v-for="xxx in img" :key="xxx.id">
-        <img :src="xxx.imageUrl" style="width:100%;">
+        <img :src="xxx.imageUrl" style="width:100%;" @click="xq">
       </van-swipe-item>
     </van-swipe>
   </div>
@@ -11,21 +11,22 @@
 export default {
   name: "Banner",
   components: {},
-  data(){
-    return {
-    }
+  data() {
+    return {};
   },
   methods: {
-  
+    xq() {
+      this.$router.push('/goods')
+    }
   },
-  created:function(){
+  created: function() {
     // console.log(this)
   },
   computed: {
     img() {
-      return this.$store.state.homemsg.home_sj.data.topUrlNew.topUrls
+      return this.$store.state.homemsg.home_sj.data.topUrlNew.topUrls;
     }
-  },
+  }
 };
 </script>
 

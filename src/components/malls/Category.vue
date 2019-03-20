@@ -2,7 +2,7 @@
   <div class="category">
     <van-tabs sticky :offset-top="tops">
       <van-tab v-for="xxx in cate" :title="xxx.name" :key="xxx.id">
-        <div v-for="xx in xxx.infoVos" class="category_dk" :key="xx.productId">
+        <div v-for="xx in xxx.infoVos" class="category_dk" :key="xx.productId" @click="xq">
           <div class="category_dk_img">
             <img :src="xx.adImgUrl" alt>
           </div>
@@ -49,8 +49,12 @@ export default {
     }
   },
   beforeCreate: function() {
-    this.$store.dispatch('mall_category')
-
+    this.$store.dispatch("mall_category");
+  },
+  methods: {
+    xq() {
+      this.$router.push("/goods");
+    }
   }
 };
 </script>
@@ -58,7 +62,7 @@ export default {
 <style scoped>
 .category {
   background-color: #eeeef3;
-  margin-bottom: 50px
+  margin-bottom: 50px;
 }
 .category_dk {
   height: 154px;
@@ -136,10 +140,10 @@ export default {
   height: 26px;
   background-color: #f93935;
   border-radius: 100%;
-  float: right
+  float: right;
 }
 .category_dk_nr_gwc_ic {
-    position: relative;
-    left: 5px;
+  position: relative;
+  left: 5px;
 }
 </style>

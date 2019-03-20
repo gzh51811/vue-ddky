@@ -1,7 +1,7 @@
 <template>
   <div>
     <van-swipe :autoplay="3000" indicator-color="white">
-      <van-swipe-item v-for="xxx in images" :key="xxx.id">
+      <van-swipe-item v-for="xxx in images" :key="xxx.id" @click="xq">
         <img :src="xxx.imageUrl" style="width:100%;height:auto">
       </van-swipe-item>
     </van-swipe>
@@ -20,6 +20,10 @@ export default {
     images() {
       // console.log(this.$store.state.mall.mallsj.data.mallBannerModule.topUrls);
       return this.$store.state.mall.mallsj.data.mallBannerModule.topUrls;
+    }
+  },methods: {
+    xq() {
+      this.$router.push('/goods')
     }
   }
 };

@@ -5,12 +5,14 @@
         <img src="https://img.ddky.com/c/wap/images/ddky2/choose.jpg" alt>
         <p>{{aa.name}}</p>
       </div>
-      <div id="special_drug" class="special_drug cl" v-for="bb in aa.infoVos" :key="bb.id">
-        <img
-          id="listpage"
-          :src="bb.adImgUrl"
-          alt
-        >
+      <div
+        id="special_drug"
+        class="special_drug cl"
+        v-for="bb in aa.infoVos"
+        :key="bb.id"
+        @click="xq"
+      >
+        <img id="listpage" :src="bb.adImgUrl" alt>
         <div class="top fr">
           <p class="one">{{bb.adText}}</p>
           <p class="two">{{bb.name}}</p>
@@ -39,6 +41,11 @@ export default {
     goods() {
       // console.log(this.$store.state.homemsg.shangpin.result);
       return this.$store.state.homemsg.shangpin.result;
+    }
+  },
+  methods: {
+    xq() {
+      this.$router.push("/goods");
     }
   }
 };

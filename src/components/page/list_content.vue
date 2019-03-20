@@ -1,7 +1,6 @@
 <template>
   <div class="content">
-
-    <div class="items" v-for="x in shoplists.data.productList" :key="x.id">
+    <div class="items" v-for="x in shoplists.data.productList" :key="x.id" @click="xq">
       <dl class="cl">
         <dt class="fl">
           <img :src="x.imgUrl" alt>
@@ -33,7 +32,6 @@
         </dd>
       </dl>
     </div>
-
   </div>
 </template>
 <script>
@@ -51,6 +49,11 @@ export default {
     shoplists() {
       console.log(this.$store.getters.shoplists);
       return this.$store.getters.shoplists;
+    }
+  },
+  methods: {
+    xq() {
+      this.$router.push("/goods");
     }
   }
 };
