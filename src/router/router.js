@@ -67,12 +67,10 @@ let router = new VueRouter({
         component: search
     },
     {
-<<<<<<< HEAD
         path: '/Xlist',
         name: "Xlist",
         component: Xlist
-    }]
-=======
+    },{
         // 详情页
         path: '/goods',
         name: 'goods',
@@ -80,7 +78,6 @@ let router = new VueRouter({
     },
     
 ]
->>>>>>> 2613be6e4409a4f6a6cc3148daae96bc29bfc05b
 });
 
 export default router

@@ -2,13 +2,13 @@
   <div class="Xlabel">
     <div class="headList">
       <div class="top">
-        <span tabindex="1" class="active">全部</span>
-        <span tabindex="2" class>儿童感冒</span>
-        <span tabindex="3" class>儿童腹泻</span>
-        <span tabindex="4" class>儿童消化不良</span>
-        <span tabindex="5" class>儿童补益</span>
-        <span tabindex="6" class>儿童咳嗽</span>
-        <span tabindex="7" class>小儿退热贴</span>
+        <span class="active">全部</span>
+        <span class>儿童感冒</span>
+        <span class>儿童腹泻</span>
+        <span class>儿童消化不良</span>
+        <span class>儿童补益</span>
+        <span class>儿童咳嗽</span>
+        <span class>小儿退热贴</span>
       </div>
     </div>
   </div>
@@ -16,6 +16,11 @@
 <script>
 export default {
   name: "Xlabel",
+  data(){
+    return {
+      
+    }
+  },
   methods: {
     change() {}
   }
