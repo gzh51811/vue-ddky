@@ -1,28 +1,29 @@
 <template>
     <div class="ul_all">
                 <h1 class="goods-name">
-                    <span class="sign">28分钟</span>
-                    [美林]布洛芬混悬液(儿童)+[三精]护脑退热贴(通用型)
+                    <span class="sign">{{goods.detail.deliveryInfo.typeText}}</span>{{goods.detail.name}}
                 </h1>
                 <div class="zhuzhi">
-                    <p class="zhuzhi_info">用于儿童普通感冒或流感引起的发热</p>
+                    <p class="zhuzhi_info">{{goods.detail.productDescription}}</p>
                     <p class="goods-state">说明书</p>
                 </div>
-                <p class="other"><span>100ml：2g(布洛芬)+12cmx5cmx3片(退热贴);</span> </p>
+                <p class="other"><span>{{goods.detail.productSpecifications}}</span> </p>
                 <div class="moneybox">
                     <p class="fl moneysetmeal">套餐价：</p>
                     <p class="money">
-                        ¥<span>42.80</span>
-                        <span class="oldPrice">￥47.50</span>
+                        ¥<span>{{goods.detail.price}}</span>
+                        <span class="oldPrice">{{goods.detail.originalPrice}}</span>
                     </p>
-                    <p class="sales">月售 2737 笔</p>
+                    <p class="sales">月售{{goods.detail.saleVolume}} 笔</p>
                 </div>
-                <p class="eco"><span class="economize">立省4.70元</span></p>
+                <p class="eco"><span class="economize">立省{{goods.detail.discountPrice}}元</span></p>
                 <div class="box"></div>
             </div>
+            
 </template>
 <script>
 export default {
+   props:["goods"],
     
 }
 </script>

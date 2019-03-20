@@ -225,7 +225,7 @@ dd {
 }
 .item_info .goodsInfo {
     /*width: 76px;*/
-    float:left;
+    /* float:left; */
     display: inline-block;
 
 }

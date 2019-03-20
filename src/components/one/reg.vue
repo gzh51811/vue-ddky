@@ -111,7 +111,7 @@ li {
   display: inline-block;
   width: 20px;
   height: 20px;
-  float: right;
+  // float: right;
   margin-right: 10px;
 }
 .clear-tel img {
@@ -206,5 +206,4 @@ li .smsCode {
   // width: -webkit-calc(100% - 100px);
 }
 </style>
-
 

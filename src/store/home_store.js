@@ -18,7 +18,7 @@ export default {
                     list: []
                 },
                 categoryList: []
-            }
+            },
         },
         //home商品数据
         shangpin: {

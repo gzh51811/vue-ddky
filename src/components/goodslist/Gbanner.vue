@@ -1,15 +1,15 @@
 <template>
     <li class="lunbo">
             <van-swipe :autoplay="3000" indicator-color="white">
-                <van-swipe-item>这里改为公共轮播组件</van-swipe-item>
-                <van-swipe-item>同一张图片轮播</van-swipe-item>
+                <van-swipe-item><img :src="goodsss.detail.imgUrl"/></van-swipe-item>
+                <van-swipe-item><img :src="goodsss.detail.imgUrl"/></van-swipe-item>
             </van-swipe>
             
     </li>
 </template>
 <script>
 export default {
-    
+    props:["goodsss"],
 }
 </script>
 <style lang="less" scoped>
@@ -20,6 +20,11 @@ export default {
 }
 li{
     list-style: none;
+}
+img{
+    padding-left: 30%;
+    padding-top: 5%;
+    width: 160px;
 }
 </style>
 

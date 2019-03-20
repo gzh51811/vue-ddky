@@ -1,8 +1,8 @@
 <template>
            <div>
                 <p class="peisong-info">
-                <img src="http://img.ddsy.com/c/mobile/images/spicon/logo_20171130.png">
-                <span>&nbsp;&nbsp;[快药]急送,满￥28免运费,可预约</span>
+                <img :src="goodss.detail.deliveryInfo.logo"/>
+                <span>&nbsp;&nbsp;{{goodss.detail.deliveryInfo.title1}}</span>
             </p>
             <p class="foryou"><span class="shopName fl">本商品由叮当智慧药房（广州）有限公司广州越秀东川路店为您服务</span>
             <van-icon name="weapp-nav" class='icon' />
@@ -11,16 +11,16 @@
             <div class="promotionBox">
                 <p class="fl">促销</p>
                 <ul class="fl">
-                    <li><span class="promotion">低价换购</span>商品金额已满足换购条件，快去换购啦！</li>   
-                    <li><span class="promotion">1元换购</span>买满48元可选1个，买满95元可选2个</li>
+                    <li><span class="promotion">{{goodss.detail.promotionsList[0].promotionsType}}</span>{{goodss.detail.promotionsList[0].promotionsDesc}}</li>   
+                    <li><span class="promotion">1元换购</span>{{goodss.detail.promotionsList[1].promotionsDesc}}</li>
                 </ul>
                 <img src="https://img.ddky.com/c/wap/images/ddky2/clickpoint.png" class="fr">
             </div>
             <div class="box"></div>
             <div class="favourable">
-                <p style="float:left">好评度&nbsp;&nbsp;<span class="red_col">100%</span></p>
+                <p style="float:left">好评度&nbsp;&nbsp;<span class="red_col">{{goodss.detail.positiveCommentCountPercentStr}}</span></p>
                 <p style="float:right" class="comment">
-                <span>134条评价>></span>
+                <span>{{goodss.detail.totalCommentCount}}条评价>></span>
                 </p>
             </div>
             <div class="box"></div>
@@ -28,6 +28,7 @@
 </template>
 <script>
 export default {
+    props:['goodss'],
 }
 </script>
 <style lang="less" scoped>
