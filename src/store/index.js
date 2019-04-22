@@ -24,7 +24,7 @@ export default new vuex.Store({
         goods_store: goods_store
     },
     state: {
-        severhttp: "http://localhost:3000/",
+        severhttp: "http://ddkyapi.xxlxxlxx.com",
         usern: ""
     },
     getters: {
